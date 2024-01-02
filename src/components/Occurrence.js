@@ -36,12 +36,12 @@ const Occurrence = (props) => {
 
   return (
     <>
-      <div>
+      <div className="mb-4">
         Key:
         <select
           name="Key filter X"
           onChange={handleChange}
-          className="px-10 p-4 rounded-lg border-2 border-gray-800"
+          className="ml-5 px-10 p-2 rounded-lg border-2 border-gray-800"
         >
           <option>All</option>
           {key1.map((item) => {
@@ -50,7 +50,6 @@ const Occurrence = (props) => {
                 <option
                   value={item}
                   onChange={handleChange}
-                  className="p-3 border-2"
                 >
                   {item}
                 </option>
@@ -60,7 +59,7 @@ const Occurrence = (props) => {
         </select>
       </div>
 
-      <Charts occKey={occKey} occCount={occCount} isOcc={"Yes"} />
+      <Charts label={occKey} data={occCount} isOcc={"Yes"} />
     </>
   );
 };

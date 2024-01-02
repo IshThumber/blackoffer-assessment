@@ -40,57 +40,50 @@ const KeyFilters = (props) => {
 
   return (
     <>
-      <div>Key Filters</div>
-      <div>
-        Labels:
-        <select
-          name="Key filter X"
-          onChange={handleChangeX}
-          className="px-10 p-4 rounded-lg border-2 border-gray-800"
-        >
-          <option>All</option>
-          {key1.map((item) => {
-            return (
-              <>
-                <option
-                  value={item}
-                  onChange={handleChangeX}
-                  className="p-3 border-2"
-                >
-                  {item}
-                </option>
-              </>
-            );
-          })}
-        </select>
-      </div>
-
-      <div>
-        Data:
-        <select
-          name="Key filter Y"
-          onChange={handleChangeY}
-          className="px-10 p-4 rounded-lg border-2 border-gray-800"
-        >
-          <option>All</option>
-          {key1
-            .filter((item) => {
-              return item !== selectedKeyX;
-            })
-            .map((item) => {
+      <div className="flex flex-row gap-16 mb-4">
+        <div>
+          Labels:
+          <select
+            name="Key filter X"
+            onChange={handleChangeX}
+            className="ml-5 px-10 p-2 rounded-lg border-2 border-gray-800"
+          >
+            <option>All</option>
+            {key1.map((item) => {
               return (
                 <>
-                  <option
-                    value={item}
-                    onChange={handleChangeY}
-                    className="p-3 border-2"
-                  >
+                  <option value={item} onChange={handleChangeX}>
                     {item}
                   </option>
                 </>
               );
             })}
-        </select>
+          </select>
+        </div>
+
+        <div>
+          Data:
+          <select
+            name="Key filter Y"
+            onChange={handleChangeY}
+            className="ml-5 px-10 p-2 rounded-lg border-2 border-gray-800"
+          >
+            <option>All</option>
+            {key1
+              .filter((item) => {
+                return item !== selectedKeyX;
+              })
+              .map((item) => {
+                return (
+                  <>
+                    <option value={item} onChange={handleChangeY}>
+                      {item}
+                    </option>
+                  </>
+                );
+              })}
+          </select>
+        </div>
       </div>
 
       <div>
