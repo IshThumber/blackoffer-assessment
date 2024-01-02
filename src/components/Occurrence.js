@@ -7,10 +7,8 @@ const Occurrence = (props) => {
   let key1 = props.key1;
   let wholeData = props.wholeData;
   const handleChange = (e) => {
-    console.log("change");
     setSelectedKey(e.target.value);
   };
-  console.log(selectedKey);
 
   // calculate the number of occurrences of value from the selected key
 
@@ -24,8 +22,6 @@ const Occurrence = (props) => {
   };
   const fieldsToCalculate = [selectedKey];
   const occurrences = calculateOccurrences(wholeData, fieldsToCalculate);
-
-  console.log(occurrences);
 
   const occKey = Object.entries(occurrences).map((item) => {
     return item[0];
@@ -47,10 +43,7 @@ const Occurrence = (props) => {
           {key1.map((item) => {
             return (
               <>
-                <option
-                  value={item}
-                  onChange={handleChange}
-                >
+                <option value={item} onChange={handleChange}>
                   {item}
                 </option>
               </>

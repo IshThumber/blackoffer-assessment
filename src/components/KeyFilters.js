@@ -16,11 +16,9 @@ const KeyFilters = (props) => {
   }
 
   const handleChangeX = (e) => {
-    console.log("change");
     setSelectedKeyX(e.target.value);
   };
   const handleChangeY = (e) => {
-    console.log("change");
     setSelectedKeyY(e.target.value);
   };
   const filteredDataX = getValuesByKey(selectedKeyX);
@@ -35,8 +33,6 @@ const KeyFilters = (props) => {
   }
   const processedX = removeDupAndEmpty(filteredDataX);
   const processedY = removeDupAndEmpty(filteredDataY);
-  console.log(processedX);
-  console.log(processedY);
 
   return (
     <>

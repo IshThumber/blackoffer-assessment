@@ -16,7 +16,6 @@ const Charts = (props) => {
       return colors;
     };
 
-    // console.log(getRandomColor(4));
 
     let label = props.label;
     let data = props.data;

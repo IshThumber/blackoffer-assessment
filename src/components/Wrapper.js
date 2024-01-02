@@ -1,10 +1,9 @@
-import React, { useState } from "react";
-import jsonData from "../data/data.json";
-import Charts from "./Charts";
+import React, { useEffect, useState } from "react";
+import jsonData2 from "../data/data.json";
 import KeyFilters from "./KeyFilters";
 import Occurrence from "./Occurrence";
 
-const Wrapper = () => {
+const Wrapper = ({ jsonData }) => {
   const [occurrence, setOccurrence] = useState("Yes");
   const keys = Object.keys(jsonData[0]);
   let key = keys.map((key) => {
