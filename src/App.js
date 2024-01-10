@@ -13,16 +13,18 @@ const App = () => {
         );
         const result = await response.json();
         setData(result);
+        console.log(loading);
       } catch (error) {
         console.error("Error fetching data:", error);
       } finally {
         setLoading(false);
+        console.log(loading);
       }
     };
 
     fetchData();
   }, []);
-  return <>{loading === false && <Wrapper jsonData={jsonData} />}</>;
+  return <>{loading === true ? "Loading..." : <Wrapper jsonData={jsonData} />}</>;
 };
 
 export default App;
